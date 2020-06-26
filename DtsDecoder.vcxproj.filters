@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="ComLight\client\CComPtr.hpp" />
+    <ClInclude Include="ComLight\pal\guiddef.h" />
+    <ClInclude Include="ComLight\pal\hresult.h" />
+    <ClInclude Include="ComLight\server\interfaceMap.h" />
+    <ClInclude Include="ComLight\server\Object.hpp" />
+    <ClInclude Include="ComLight\server\ObjectRoot.hpp" />
+    <ClInclude Include="ComLight\server\RefCounter.hpp" />
+    <ClInclude Include="ComLight\server\StaticObject.hpp" />
+    <ClInclude Include="ComLight\utils\guid_parse.hpp" />
+    <ClInclude Include="ComLight\utils\typeTraits.hpp" />
+    <ClInclude Include="ComLight\comLightClient.h" />
+    <ClInclude Include="ComLight\comLightCommon.h" />
+    <ClInclude Include="ComLight\comLightServer.h" />
+    <ClInclude Include="ComLight\Exception.hpp" />
+    <ClInclude Include="ComLight\hresult.h" />
+    <ClInclude Include="ComLight\unknwn.h" />
+    <ClInclude Include="DtsDecoder.h" />
+    <ClInclude Include="libdcadec\bitstream.h" />
+    <ClInclude Include="libdcadec\dca_frame.h" />
+    <ClInclude Include="libdcadec\dca_context.h" />
+    <ClInclude Include="libdcadec\core_vectors.h" />
+    <ClInclude Include="libdcadec\common.h" />
+    <ClInclude Include="libdcadec\compiler.h" />
+    <ClInclude Include="libdcadec\core_decoder.h" />
+    <ClInclude Include="libdcadec\core_huffman.h" />
+    <ClInclude Include="libdcadec\core_tables.h" />
+    <ClInclude Include="libdcadec\lbr_bitstream.h" />
+    <ClInclude Include="libdcadec\lbr_decoder.h" />
+    <ClInclude Include="libdcadec\lbr_huffman.h" />
+    <ClInclude Include="libdcadec\lbr_tables.h" />
+    <ClInclude Include="libdcadec\xll_decoder.h" />
+    <ClInclude Include="libdcadec\xll_tables.h" />
+    <ClInclude Include="libdcadec\exss_parser.h" />
+    <ClInclude Include="libdcadec\interpolator.h" />
+    <ClInclude Include="libdcadec\idct.h" />
+    <ClInclude Include="libdcadec\dmix_tables.h" />
+    <ClInclude Include="libdcadec\fixed_math.h" />
+    <ClInclude Include="libdcadec\huffman.h" />
+    <ClInclude Include="libdcadec\fir_fixed.h" />
+    <ClInclude Include="libdcadec\fir_float.h" />
+    <ClInclude Include="decoderLibrary.h" />
+    <ClInclude Include="libdcadec\memory.hpp" />
+    <ClInclude Include="libdcadec\errorCodes.h" />
+    <ClInclude Include="Utils\store3-sse.hpp" />
+    <ClInclude Include="Utils\ChannelsData.hpp" />
+    <ClInclude Include="Utils\interleaveChannels.hpp" />
+    <ClInclude Include="Utils\loadSamples.hpp" />
+    <ClInclude Include="Utils\ApplyVolume.hpp" />
+    <ClInclude Include="Utils\simdTypes-sse.hpp" />
+    <ClInclude Include="globals.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="DtsDecoder.cpp" />
+    <ClCompile Include="libdcadec\bitstream.cpp" />
+    <ClCompile Include="libdcadec\dca_frame.cpp" />
+    <ClCompile Include="libdcadec\dca_context.cpp" />
+    <ClCompile Include="libdcadec\core_decoder.cpp" />
+    <ClCompile Include="libdcadec\lbr_decoder.cpp" />
+    <ClCompile Include="libdcadec\xll_decoder.cpp" />
+    <ClCompile Include="libdcadec\exss_parser.cpp" />
+    <ClCompile Include="libdcadec\interpolator.cpp" />
+    <ClCompile Include="libdcadec\interpolator_fixed.cpp" />
+    <ClCompile Include="libdcadec\interpolator_float.cpp" />
+    <ClCompile Include="libdcadec\idct_fixed.cpp" />
+    <ClCompile Include="libdcadec\idct_float.cpp" />
+    <ClCompile Include="libdcadec\dmix_tables.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dtsDecoder.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="Utils\sse.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+</Project>
