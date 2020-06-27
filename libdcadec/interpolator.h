@@ -1,3 +1,4 @@
+// I changed the files on June 26 2020 and June 27 2020
 /*
  * This file is part of libdcadec.
  *
@@ -23,18 +24,18 @@
 
 struct interpolator;
 
-typedef void (*interpolate_lfe_cb)(int *pcm_samples, int *lfe_samples,
-                                   int npcmblocks, int dec_select);
+typedef void( *interpolate_lfe_cb )( int *pcm_samples, int *lfe_samples,
+	int npcmblocks, int dec_select );
 
-typedef void (*interpolate_sub_cb)(struct interpolator *dsp, int *pcm_samples,
-                                   int **subband_samples_lo,
-                                   int **subband_samples_hi,
-                                   int nsamples, bool perfect);
+typedef void( *interpolate_sub_cb )( struct interpolator *dsp, int *pcm_samples,
+	int **subband_samples_lo,
+	int **subband_samples_hi,
+	int nsamples, bool perfect );
 
 struct interpolator
 {
-    struct idct_context *idct = nullptr;
-    void *history = nullptr;
+	struct idct_context *idct = nullptr;
+	void *history = nullptr;
 	interpolate_sub_cb interpolate = nullptr;
 
 	operator bool() const
@@ -51,7 +52,7 @@ private:
 };
 
 /* struct interpolator *interpolator_create(struct idct_context *parent, int flags)
-    __attribute__((cold));
+	__attribute__((cold));
 void interpolator_clear(struct interpolator *dsp) __attribute__((cold)); */
 
 #define INTERPOLATE_LFE(x) \
@@ -64,14 +65,14 @@ void interpolator_clear(struct interpolator *dsp) __attribute__((cold)); */
                          int **subband_samples_hi, \
                          int nsamples, bool perfect)
 
-INTERPOLATE_LFE(lfe_float_fir);
-INTERPOLATE_LFE(lfe_float_fir_2x);
-INTERPOLATE_LFE(lfe_float_iir);
-INTERPOLATE_SUB(sub32_float);
-INTERPOLATE_SUB(sub64_float);
+INTERPOLATE_LFE( lfe_float_fir );
+INTERPOLATE_LFE( lfe_float_fir_2x );
+INTERPOLATE_LFE( lfe_float_iir );
+INTERPOLATE_SUB( sub32_float );
+INTERPOLATE_SUB( sub64_float );
 
-INTERPOLATE_LFE(lfe_fixed_fir);
-INTERPOLATE_SUB(sub32_fixed);
-INTERPOLATE_SUB(sub64_fixed);
+INTERPOLATE_LFE( lfe_fixed_fir );
+INTERPOLATE_SUB( sub32_fixed );
+INTERPOLATE_SUB( sub64_fixed );
 
 #endif

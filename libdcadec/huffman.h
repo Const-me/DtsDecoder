@@ -1,3 +1,4 @@
+// I changed the files on June 26 2020 and June 27 2020
 /*
  * This file is part of libdcadec.
  *
@@ -20,9 +21,9 @@
 #define HUFFMAN_H
 
 struct huffman {
-    const uint8_t *len;
-    const uint16_t *code;
-    int size;
+	const uint8_t *len;
+	const uint16_t *code;
+	int size;
 };
 
 #endif

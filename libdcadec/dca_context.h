@@ -1,3 +1,4 @@
+// I changed the files on June 26 2020 and June 27 2020
 /*
  * This file is part of libdcadec.
  *
@@ -306,26 +307,26 @@ DCADEC_API void dcadec_context_clear( struct dcadec_context *dca );
  *
  * @return      Pointer to decoder context on success, NULL on failure.
  */
-// DCADEC_API struct dcadec_context *dcadec_context_create( int flags );
+ // DCADEC_API struct dcadec_context *dcadec_context_create( int flags );
 
-/**
- * Destroy DTS decoder context.
- *
- * @param dca   Pointer to decoder context.
- */
-// DCADEC_API void dcadec_context_destroy( struct dcadec_context *dca );
+ /**
+  * Destroy DTS decoder context.
+  *
+  * @param dca   Pointer to decoder context.
+  */
+  // DCADEC_API void dcadec_context_destroy( struct dcadec_context *dca );
 
-/**
- * Set or clear logging callback for decoder context.
- *
- * @param dca       Pointer to decoder context.
- *
- * @param log_cb    Pointer to logging callback function. Pass NULL to disable
- *                  logging.
- *
- * @param log_cbarg Opaque pointer that will be passed through to callback
- *                  function.
- */
+  /**
+   * Set or clear logging callback for decoder context.
+   *
+   * @param dca       Pointer to decoder context.
+   *
+   * @param log_cb    Pointer to logging callback function. Pass NULL to disable
+   *                  logging.
+   *
+   * @param log_cbarg Opaque pointer that will be passed through to callback
+   *                  function.
+   */
 DCADEC_API void dcadec_context_set_log_cb( struct dcadec_context *dca,
 	dcadec_log_cb log_cb,
 	void *log_cbarg );

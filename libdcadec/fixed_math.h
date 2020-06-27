@@ -1,3 +1,4 @@
+// I changed the files on June 26 2020 and June 27 2020
 /*
  * This file is part of libdcadec.
  *
@@ -19,31 +20,31 @@
 #ifndef FIXED_MATH_H
 #define FIXED_MATH_H
 
-static inline int64_t round__(int64_t a, int bits)
+static inline int64_t round__( int64_t a, int bits )
 {
-    if (bits > 0)
-        return (a + (INT64_C(1) << (bits - 1))) & ~((INT64_C(1) << bits) - 1);
-    else
-        return a;
+	if( bits > 0 )
+		return ( a + ( INT64_C( 1 ) << ( bits - 1 ) ) ) & ~( ( INT64_C( 1 ) << bits ) - 1 );
+	else
+		return a;
 }
 
-static inline int32_t norm__(int64_t a, int bits)
+static inline int32_t norm__( int64_t a, int bits )
 {
-    if (bits > 0)
-        return (int32_t)((a + (INT64_C(1) << (bits - 1))) >> bits);
-    else
-        return (int32_t)a;
+	if( bits > 0 )
+		return (int32_t)( ( a + ( INT64_C( 1 ) << ( bits - 1 ) ) ) >> bits );
+	else
+		return (int32_t)a;
 }
 
-static inline int32_t mul__(int32_t a, int32_t b, int bits)
+static inline int32_t mul__( int32_t a, int32_t b, int bits )
 {
-    return norm__((int64_t)a * b, bits);
+	return norm__( (int64_t)a * b, bits );
 }
 
-static inline int32_t clip__(int32_t a, int bits)
+static inline int32_t clip__( int32_t a, int bits )
 {
 #ifndef _MSC_VER
-    int x;
+	int x;
 	__asm__( "ssat %0, %2, %1" : "=r"( x ) : "r"( a ), "i"( bits + 1 ) );
 	return x;
 #else
@@ -54,32 +55,32 @@ static inline int32_t clip__(int32_t a, int bits)
 #endif
 }
 
-static inline int64_t round20(int64_t a) { return round__(a, 20); }
-static inline int64_t round21(int64_t a) { return round__(a, 21); }
+static inline int64_t round20( int64_t a ) { return round__( a, 20 ); }
+static inline int64_t round21( int64_t a ) { return round__( a, 21 ); }
 
-static inline int32_t norm13(int64_t a) { return norm__(a, 13); }
-static inline int32_t norm16(int64_t a) { return norm__(a, 16); }
-static inline int32_t norm20(int64_t a) { return norm__(a, 20); }
-static inline int32_t norm21(int64_t a) { return norm__(a, 21); }
-static inline int32_t norm23(int64_t a) { return norm__(a, 23); }
+static inline int32_t norm13( int64_t a ) { return norm__( a, 13 ); }
+static inline int32_t norm16( int64_t a ) { return norm__( a, 16 ); }
+static inline int32_t norm20( int64_t a ) { return norm__( a, 20 ); }
+static inline int32_t norm21( int64_t a ) { return norm__( a, 21 ); }
+static inline int32_t norm23( int64_t a ) { return norm__( a, 23 ); }
 
-static inline int32_t mul3(int32_t a, int32_t b)
+static inline int32_t mul3( int32_t a, int32_t b )
 {
-    return (a * b + (1 << 2)) >> 3;
+	return ( a * b + ( 1 << 2 ) ) >> 3;
 }
 
-static inline int32_t mul4(int32_t a, int32_t b)
+static inline int32_t mul4( int32_t a, int32_t b )
 {
-    return (a * b + (1 << 3)) >> 4;
+	return ( a * b + ( 1 << 3 ) ) >> 4;
 }
 
-static inline int32_t mul15(int32_t a, int32_t b) { return mul__(a, b, 15); }
-static inline int32_t mul16(int32_t a, int32_t b) { return mul__(a, b, 16); }
-static inline int32_t mul17(int32_t a, int32_t b) { return mul__(a, b, 17); }
-static inline int32_t mul22(int32_t a, int32_t b) { return mul__(a, b, 22); }
-static inline int32_t mul23(int32_t a, int32_t b) { return mul__(a, b, 23); }
-static inline int32_t mul31(int32_t a, int32_t b) { return mul__(a, b, 31); }
+static inline int32_t mul15( int32_t a, int32_t b ) { return mul__( a, b, 15 ); }
+static inline int32_t mul16( int32_t a, int32_t b ) { return mul__( a, b, 16 ); }
+static inline int32_t mul17( int32_t a, int32_t b ) { return mul__( a, b, 17 ); }
+static inline int32_t mul22( int32_t a, int32_t b ) { return mul__( a, b, 22 ); }
+static inline int32_t mul23( int32_t a, int32_t b ) { return mul__( a, b, 23 ); }
+static inline int32_t mul31( int32_t a, int32_t b ) { return mul__( a, b, 31 ); }
 
-static inline int32_t clip23(int32_t a) { return clip__(a, 23); }
+static inline int32_t clip23( int32_t a ) { return clip__( a, 23 ); }
 
 #endif

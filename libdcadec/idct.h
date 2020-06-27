@@ -1,3 +1,4 @@
+// I changed the files on June 26 2020 and June 27 2020
 /*
  * This file is part of libdcadec.
  *
@@ -23,18 +24,18 @@
 #define IDCT_SIZE   (1 << IDCT_BITS)
 
 struct idct_context {
-    double cs[IDCT_SIZE / 2];
-    double ac[IDCT_SIZE / 2];
-    double as[IDCT_SIZE / 2];
-    uint8_t permute[IDCT_SIZE / 2];
-    int nbits;
+	double cs[ IDCT_SIZE / 2 ];
+	double ac[ IDCT_SIZE / 2 ];
+	double as[ IDCT_SIZE / 2 ];
+	uint8_t permute[ IDCT_SIZE / 2 ];
+	int nbits;
 };
 
-unique_ptr<idct_context> idct_init(void *parent, int nbits, double scale) __attribute__((cold));
-void idct_fast(const struct idct_context *s, const double *input, double *output);
-void imdct_fast(const struct idct_context *s, const float *input, float *output);
+unique_ptr<idct_context> idct_init( void *parent, int nbits, double scale ) __attribute__( ( cold ) );
+void idct_fast( const struct idct_context *s, const double *input, double *output );
+void imdct_fast( const struct idct_context *s, const float *input, float *output );
 
-void idct_fixed32(int * restrict input, int * restrict output);
-void idct_fixed64(int * restrict input, int * restrict output);
+void idct_fixed32( int * restrict input, int * restrict output );
+void idct_fixed64( int * restrict input, int * restrict output );
 
 #endif
